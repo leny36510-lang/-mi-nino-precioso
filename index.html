@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Para mi niño precioso 💗</title>
+<style>
+*{box-sizing:border-box}
+body{
+  margin:0; min-height:100vh; overflow:hidden;
+  display:flex; justify-content:center; align-items:center;
+  font-family:Georgia,serif; color:white;
+  background:radial-gradient(circle at 50% 45%,#45206b 0,#17133c 45%,#050719 100%);
+}
+.stars,.stars:before,.stars:after{
+  position:absolute; inset:0; content:""; pointer-events:none;
+  background-image:radial-gradient(#fff 1px,transparent 1px);
+  background-size:90px 90px; opacity:.65;
+}
+.stars:before{background-size:130px 130px;transform:translate(35px,20px);opacity:.4}
+.card{
+  position:relative; z-index:2; width:min(90%,560px); padding:38px 28px;
+  text-align:center; border:1px solid rgba(255,255,255,.25);
+  border-radius:28px; background:rgba(15,10,40,.62);
+  box-shadow:0 0 40px rgba(210,130,255,.25); backdrop-filter:blur(8px);
+}
+h1{font-size:30px;margin:0 0 20px;color:#ffd8ef}
+p{font-size:19px;line-height:1.7;margin:0}
+button{
+  margin-top:25px;padding:12px 25px;border:0;border-radius:30px;
+  background:#ff77b7;color:white;font-size:16px;cursor:pointer;
+}
+.heart{
+  position:absolute;bottom:-30px;font-size:22px;animation:float 7s linear infinite;
+  opacity:.8; z-index:1;
+}
+@keyframes float{to{transform:translateY(-110vh) rotate(25deg);opacity:0}}
+audio{width:100%;margin-top:24px}
+</style>
+</head>
+<body>
+<div class="stars"></div>
+<div class="card">
+  <h1>💗 Para mi niño chiquito y precioso 💗</h1>
+  <p>
+    Mi amor, mi niño chiquito y precioso. 🥺💞<br><br>
+    Tienes unos ojitos bien bonitos que me encantan muchísimo.
+    Quiero que sepas que siempre voy a estar para ti, en los momentos
+    buenos y también cuando las cosas no estén tan bien. Nunca olvides
+    lo mucho que te quiero y lo importante que eres para mí. 💕<br><br>
+    Me haces muy feliz con cada pequeño detalle, cada palabra y cada
+    momento que compartimos. Espero poder seguir creando muchos recuerdos
+    bonitos contigo. ✨<br><br>
+    Te quiero muchísimo, mi niño precioso. 🫶🏻💖
+  </p>
+  <audio controls loop>
+    <source src="cancion.mp4" type="video/mp4">
+  </audio>
+</div>
+<script>
+function heart(){
+  const h=document.createElement("div");
+  h.className="heart"; h.textContent=["💗","💖","💕","💘","💞"][Math.floor(Math.random()*5)];
+  h.style.left=Math.random()*100+"vw";
+  h.style.animationDuration=(5+Math.random()*5)+"s";
+  document.body.appendChild(h);
+  setTimeout(()=>h.remove(),10000);
+}
+setInterval(heart,500);
+</script>
+</body>
+</html>
